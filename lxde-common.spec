@@ -7,7 +7,7 @@ Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.bz2
 URL:		http://lxde.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	gtk+2-devel
+BuildRequires:	glib2-devel libx11-devel
 Requires:	smproxy
 Requires:	xscreensaver
 Requires:	openbox
