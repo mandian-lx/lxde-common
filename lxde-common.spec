@@ -5,6 +5,9 @@ Release:	%mkrel 3
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.bz2
+# Mandriva customization patch
+Patch101:	lxde-common-0.3.2.1-use-mandriva-backgrounds.patch
+Patch102:	lxde-common-0.3.2.1-add-mcc-to-panel.patch
 URL:		http://lxde.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	glib2-devel libx11-devel
@@ -28,6 +31,8 @@ This package contains nuoveXT2 icon theme for LXDE.
 
 %prep
 %setup -q
+%patch101 -p0 -b .mdv
+%patch102 -p0 -b .mdv
 
 %build
 %configure2_5x
