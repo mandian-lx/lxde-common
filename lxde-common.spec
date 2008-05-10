@@ -1,7 +1,7 @@
 Summary:	A set of default configuration for LXDE
 Name:	  	lxde-common
 Version:	0.3.2.1
-Release:	%mkrel 5
+Release:	%mkrel 6
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.bz2
@@ -19,6 +19,7 @@ Requires:	lxpanel
 Requires:	lxsession
 Requires:	pcmanfm
 Requires:	nuoveXT2-icon-theme
+Requires:	mandriva-lxde-config
 
 %description
 This package provides a set of default configuration for LXDE.
@@ -45,6 +46,9 @@ rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 
 %{find_lang} %{name}
+
+# we'll ship this file via mandriva-lxde-config
+rm -f %buildroot%{_datadir}/lxde/config
 
 # we do not need this file
 rm -f %buildroot%{_datadir}/xsessions/LXDE.desktop
