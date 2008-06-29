@@ -1,7 +1,7 @@
 Summary:	A set of default configuration for LXDE
 Name:	  	lxde-common
 Version:	0.3.2.1
-Release:	%mkrel 9
+Release:	%mkrel 10
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.bz2
@@ -64,6 +64,21 @@ SCRIPT:
 exec /usr/bin/startlxde
 EOF
 
+touch %buildroot%{_iconsdir}/nuoveXT2/icon-theme.cache
+# automatic gtk icon cache update on rpm installs/removals
+# (see http://wiki.mandriva.com/en/Rpm_filetriggers)
+install -d %buildroot%{_var}/lib/rpm/filetriggers
+cat > %buildroot%{_var}/lib/rpm/filetriggers/gtk-icon-cache-nuoveXT2.filter << EOF
+^./usr/share/icons/nuoveXT2/
+EOF
+cat > %buildroot%{_var}/lib/rpm/filetriggers/gtk-icon-cache-nuoveXT2.script << EOF
+#!/bin/sh
+if [ -x /usr/bin/gtk-update-icon-cache ]; then 
+  /usr/bin/gtk-update-icon-cache --force --quiet /usr/share/icons/nuoveXT2
+fi
+EOF
+chmod 755 %buildroot%{_var}/lib/rpm/filetriggers/gtk-icon-cache-nuoveXT2.script
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -93,3 +108,5 @@ rm -rf $RPM_BUILD_ROOT
 %files -n nuoveXT2-icon-theme
 %defattr(-, root, root)
 %{_iconsdir}/nuoveXT2
+%ghost %{_iconsdir}/nuoveXT2/icon-theme.cache
+%{_var}/lib/rpm/filetriggers/gtk-icon-cache-nuoveXT2.*
