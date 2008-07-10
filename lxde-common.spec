@@ -64,6 +64,8 @@ SCRIPT:
 exec /usr/bin/startlxde
 EOF
 
+touch %buildroot%{_iconsdir}/nuoveXT2/icon-theme.cache
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
