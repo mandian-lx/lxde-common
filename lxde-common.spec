@@ -1,7 +1,7 @@
 Summary:	A set of default configuration for LXDE
 Name:	  	lxde-common
 Version:	0.3.2.1
-Release:	%mkrel 12
+Release:	%mkrel 13
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.bz2
@@ -20,6 +20,7 @@ Requires:	lxde-session-manager
 Requires:	pcmanfm
 Requires:	nuoveXT2-icon-theme
 Requires:	mandriva-lxde-config
+Requires(post):	mandriva-theme
 Suggests:	lxterminal
 
 %description
@@ -71,6 +72,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 %make_session
+echo "wallpaper=`ls /usr/share/mdk/backgrounds/default.*|head -n1`" >>/usr/share/lxde/pcmanfm/main.lxde
 
 %postun
 %make_session
