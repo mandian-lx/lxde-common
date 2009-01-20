@@ -1,7 +1,7 @@
 Summary:	A set of default configuration for LXDE
 Name:	  	lxde-common
 Version:	0.3.2.1
-Release:	%mkrel 13
+Release:	%mkrel 14
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.bz2
@@ -57,7 +57,7 @@ rm -f %buildroot%{_datadir}/xsessions/LXDE.desktop
 
 # instead, we use wmsession.d
 install -d %buildroot%_sysconfdir/X11/wmsession.d/
-cat > %buildroot%_sysconfdir/X11/wmsession.d/26LXDE << EOF
+cat > %buildroot%_sysconfdir/X11/wmsession.d/25LXDE << EOF
 NAME=LXDE
 DESC=Lightweight X11 Desktops Environment
 EXEC=/usr/bin/startlxde
@@ -88,7 +88,7 @@ echo "wallpaper=`ls /usr/share/mdk/backgrounds/default.*|head -n1`" >>/usr/share
 %config(noreplace) %{_sysconfdir}/xdg/lxsession/LXDE/autostart
 %config(noreplace) %{_sysconfdir}/xdg/lxsession/LXDE/config
 %config(noreplace) %{_sysconfdir}/xdg/lxsession/LXDE/default
-%{_sysconfdir}/X11/wmsession.d/26LXDE
+%{_sysconfdir}/X11/wmsession.d/25LXDE
 %{_bindir}/*
 %{_datadir}/lxde
 %{_datadir}/lxpanel
