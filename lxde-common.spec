@@ -1,7 +1,7 @@
 Summary:	A set of default configuration for LXDE
 Name:	  	lxde-common
 Version:	0.3.2.1
-Release:	%mkrel 14
+Release:	%mkrel 15
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.bz2
@@ -35,9 +35,9 @@ This package contains nuoveXT2 icon theme for LXDE.
 
 %prep
 %setup -q
-%patch101 -p0 -b .mdv
-%patch102 -p0 -b .mdv
-%patch103 -p0 -b .mdv
+%patch101 -p1 -b .mdv-background
+%patch102 -p0 -b .mdv-mcc
+%patch103 -p0 -b .mdv-panel
 
 %build
 %configure2_5x
@@ -57,7 +57,7 @@ rm -f %buildroot%{_datadir}/xsessions/LXDE.desktop
 
 # instead, we use wmsession.d
 install -d %buildroot%_sysconfdir/X11/wmsession.d/
-cat > %buildroot%_sysconfdir/X11/wmsession.d/25LXDE << EOF
+cat > %buildroot%_sysconfdir/X11/wmsession.d/04LXDE << EOF
 NAME=LXDE
 DESC=Lightweight X11 Desktops Environment
 EXEC=/usr/bin/startlxde
@@ -88,7 +88,7 @@ echo "wallpaper=`ls /usr/share/mdk/backgrounds/default.*|head -n1`" >>/usr/share
 %config(noreplace) %{_sysconfdir}/xdg/lxsession/LXDE/autostart
 %config(noreplace) %{_sysconfdir}/xdg/lxsession/LXDE/config
 %config(noreplace) %{_sysconfdir}/xdg/lxsession/LXDE/default
-%{_sysconfdir}/X11/wmsession.d/25LXDE
+%{_sysconfdir}/X11/wmsession.d/04LXDE
 %{_bindir}/*
 %{_datadir}/lxde
 %{_datadir}/lxpanel
