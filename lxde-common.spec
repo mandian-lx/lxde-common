@@ -1,7 +1,7 @@
 Summary:	A set of default configuration for LXDE
 Name:	  	lxde-common
 Version:	0.3.2.1
-Release:	%mkrel 15
+Release:	%mkrel 16
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.bz2
@@ -72,7 +72,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 %make_session
-echo "wallpaper=`ls /usr/share/mdk/backgrounds/default.*|head -n1`" >>/usr/share/lxde/pcmanfm/main.lxde
 
 %postun
 %make_session
