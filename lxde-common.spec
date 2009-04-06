@@ -1,7 +1,7 @@
 Summary:	A set of default configuration for LXDE
 Name:	  	lxde-common
 Version:	0.3.2.1
-Release:	%mkrel 16
+Release:	%mkrel 17
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.bz2
@@ -21,7 +21,7 @@ Requires:	pcmanfm
 Requires:	nuoveXT2-icon-theme
 Requires:	mandriva-lxde-config
 Requires(post):	mandriva-theme
-Suggests:	lxterminal
+Requires:	lxterminal
 
 %description
 This package provides a set of default configuration for LXDE.
