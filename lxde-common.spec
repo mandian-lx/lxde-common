@@ -1,14 +1,14 @@
 Summary:	A set of default configuration for LXDE
 Name:	  	lxde-common
-Version:	0.3.2.1
-Release:	%mkrel 17
+Version:	0.4
+Release:	%mkrel 1
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.bz2
 # Mandriva customization patch
 Patch101:	lxde-common-0.3.2.1-use-mandriva-backgrounds.patch
 Patch102:	lxde-common-0.3.2.1-add-mcc-to-panel.patch
-Patch103:	lxde-common-0.3.2.1-lxpanel-customization.patch
+Patch103:	lxde-common-0.4-lxpanel-customization.patch
 URL:		http://lxde.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	glib2-devel libx11-devel
