@@ -1,7 +1,7 @@
 Summary:	A set of default configuration for LXDE
 Name:	  	lxde-common
 Version:	0.4.1
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.bz2
@@ -16,7 +16,7 @@ Requires:	smproxy
 Requires:	xscreensaver
 Requires:	openbox
 Requires:	lxpanel
-Requires:	lxde-session-manager
+Requires:	lxsession >= 0.3.8
 Requires:	pcmanfm
 Requires:	nuoveXT2-icon-theme
 Requires:	lxde-settings-daemon >= 0.4
