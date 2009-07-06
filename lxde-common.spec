@@ -86,7 +86,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-, root, root)
 %config(noreplace) %{_sysconfdir}/xdg/lxsession/LXDE/autostart
 %config(noreplace) %{_sysconfdir}/xdg/lxsession/LXDE/config
-%config(noreplace) %{_sysconfdir}/xdg/lxsession/LXDE/default
 %{_sysconfdir}/X11/wmsession.d/04LXDE
 %{_bindir}/*
 %{_datadir}/lxde
