@@ -1,10 +1,10 @@
 Summary:	A set of default configuration for LXDE
 Name:	  	lxde-common
-Version:	0.4.2
-Release:	%mkrel 3
+Version:	0.5.0
+Release:	%mkrel 1
 License:	GPLv2+
 Group:		Graphical desktop/Other
-Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.bz2
+Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.gz
 # Mandriva customization patch
 Patch101:	lxde-common-0.3.2.1-use-mandriva-backgrounds.patch
 Patch102:	lxde-common-0.3.2.1-add-mcc-to-panel.patch
@@ -16,7 +16,7 @@ Requires:	smproxy
 Suggests:	xscreensaver
 Requires:	openbox
 Requires:	lxpanel
-Requires:	lxsession >= 0.3.8
+Requires:	lxsession >= 0.4.1
 Requires:	pcmanfm
 Requires:	nuoveXT2-icon-theme
 Requires:	lxde-settings-daemon >= 0.4
@@ -25,13 +25,6 @@ Requires:	lxterminal
 
 %description
 This package provides a set of default configuration for LXDE.
-
-%package -n nuoveXT2-icon-theme
-Summary:	nuoveXT2 icon theme
-Group:		Graphical desktop/Other
-
-%description -n nuoveXT2-icon-theme
-This package contains nuoveXT2 icon theme for LXDE.
 
 %prep
 %setup -q
@@ -65,8 +58,6 @@ SCRIPT:
 exec /usr/bin/startlxde
 EOF
 
-touch %buildroot%{_iconsdir}/nuoveXT2/icon-theme.cache
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -75,12 +66,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %postun
 %make_session
-
-%post -n nuoveXT2-icon-theme
-%update_icon_cache nuoveXT2
-
-%postun -n nuoveXT2-icon-theme
-%clean_icon_cache nuoveXT2
 
 %files -f %{name}.lang
 %defattr(-, root, root)
@@ -91,8 +76,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/lxde
 %{_datadir}/lxpanel
 %{_mandir}/man1/*
-
-%files -n nuoveXT2-icon-theme
-%defattr(-, root, root)
-%{_iconsdir}/nuoveXT2
-%ghost %{_iconsdir}/nuoveXT2/icon-theme.cache
