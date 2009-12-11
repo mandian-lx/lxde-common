@@ -11,17 +11,22 @@ Patch102:	lxde-common-0.3.2.1-add-mcc-to-panel.patch
 Patch103:	lxde-common-0.4-lxpanel-customization.patch
 URL:		http://lxde.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	glib2-devel libx11-devel
+BuildArch:	noarch
 Requires:	smproxy
 Suggests:	xscreensaver
 Requires:	openbox
 Requires:	lxpanel
 Requires:	lxsession >= 0.4.1
 Requires:	pcmanfm
-Requires:	nuoveXT2-icon-theme
-Requires:	lxde-settings-daemon >= 0.4
-Requires(post):	mandriva-theme
 Requires:	lxterminal
+Requires:	lxde-icon-theme
+Requires:	lxde-settings-daemon >= 0.4
+Requires:	mandriva-lxde-config >= 0.5
+Conflicts:	mandriva-lxde-config-Free < 0.5
+Conflicts:      mandriva-lxde-config-Flash < 0.5
+Conflicts:      mandriva-lxde-config-One < 0.5
+Conflicts:	mandriva-lxde-config-Powerpack < 0.5
+Requires(post):	mandriva-theme
 
 %description
 This package provides a set of default configuration for LXDE.
@@ -43,7 +48,7 @@ rm -rf $RPM_BUILD_ROOT
 %{find_lang} %{name}
 
 # we'll ship this file via mandriva-lxde-config
-rm -f %buildroot%{_datadir}/lxde/config
+rm -f %buildroot%{_sysconfdir}/xdg/lxsession/LXDE/desktop.conf
 
 # we do not need this file
 rm -f %buildroot%{_datadir}/xsessions/LXDE.desktop
@@ -70,7 +75,6 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(-, root, root)
 %config(noreplace) %{_sysconfdir}/xdg/lxsession/LXDE/autostart
-%config(noreplace) %{_sysconfdir}/xdg/lxsession/LXDE/config
 %{_sysconfdir}/X11/wmsession.d/04LXDE
 %{_bindir}/*
 %{_datadir}/lxde
