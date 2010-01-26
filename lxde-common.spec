@@ -21,7 +21,6 @@ Requires:	lxsession >= 0.4.1
 Requires:	pcmanfm
 Requires:	lxterminal
 Requires:	lxde-icon-theme
-Requires:	lxde-settings-daemon >= 0.4
 Requires:	mandriva-lxde-config >= 0.5
 Conflicts:	mandriva-lxde-config-Free < 0.5
 Conflicts:      mandriva-lxde-config-Flash < 0.5
