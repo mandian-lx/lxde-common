@@ -1,7 +1,7 @@
 Summary:	A set of default configuration for LXDE
 Name:	  	lxde-common
 Version:	0.5.0
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.gz
@@ -10,9 +10,6 @@ Patch101:	lxde-common-0.3.2.1-use-mandriva-backgrounds.patch
 Patch102:	lxde-common-0.3.2.1-add-mcc-to-panel.patch
 Patch103:	lxde-common-0.4-lxpanel-customization.patch
 Patch104:	lxde-common-0.5-fix-startlxde.patch
-# add patch to autostart setxkbmap to make kb layout switcher display
-# appropriate flag/code
-Patch105:	lxde-common-0.5-autostart-add-setxkbmap.patch
 URL:		http://lxde.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:	noarch
@@ -40,7 +37,6 @@ This package provides a set of default configuration for LXDE.
 %patch102 -p0 -b .mdv-mcc
 %patch103 -p0 -b .mdv-panel
 %patch104 -p0 -b .startlxde
-%patch105 -p0
 
 %build
 %configure2_5x
