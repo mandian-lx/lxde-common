@@ -1,24 +1,26 @@
+%define git git20110721
+
 Summary:	A set of default configuration for LXDE
 Name:	  	lxde-common
-Version:	0.5.0
-Release:	%mkrel 5
+Version:	0.5.5
+Release:	%mkrel -c %git 1
 License:	GPLv2+
 Group:		Graphical desktop/Other
-Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.gz
+Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version-%git.tar.gz
 # Mandriva customization patch
-Patch101:	lxde-common-0.3.2.1-use-mandriva-backgrounds.patch
-Patch102:	lxde-common-0.3.2.1-add-mcc-to-panel.patch
-Patch103:	lxde-common-0.4-lxpanel-customization.patch
-Patch104:	lxde-common-0.5-fix-startlxde.patch
+Patch101:	lxde-common-0.5.5-use-mandriva-backgrounds.patch
+Patch102:	lxde-common-0.5.5-add-mcc-to-panel.patch
+Patch103:	lxde-common-0.5.5-lxpanel-customization.patch
+Patch105:	lxde-common-0.5.5-fix-makefile.patch
 URL:		http://lxde.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:	noarch
-Requires:	smproxy
+#Requires:	smproxy
 Suggests:	xscreensaver
 Requires:	openbox
 Requires:	lxpanel
 Requires:	lxsession >= 0.4.1
-Requires:	pcmanfm
+Requires:	pcmanfm >= 0.9.7
 Requires:	lxterminal
 Requires:	lxde-icon-theme
 Requires:	mandriva-lxde-config >= 0.5
@@ -33,17 +35,18 @@ This package provides a set of default configuration for LXDE.
 
 %prep
 %setup -q
-%patch101 -p1 -b .mdv-background
+%patch101 -p0 -b .mdv-background
 %patch102 -p0 -b .mdv-mcc
 %patch103 -p0 -b .mdv-panel
-%patch104 -p0 -b .startlxde
+%patch105 -p0 -b .makefile
 
 %build
-%configure2_5x
+./autogen.sh
+%configure2_5x --enable-man
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std
 
 %{find_lang} %{name}
@@ -68,7 +71,7 @@ EOF
 install -m644 -D lxde-logout.desktop.in %buildroot%_datadir/applications/lxde-logout.desktop
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %post
 %make_session
@@ -79,6 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(-, root, root)
 %config %{_sysconfdir}/xdg/lxsession/LXDE/autostart
+%config %{_sysconfdir}/xdg/pcmanfm/LXDE.conf
 %{_sysconfdir}/X11/wmsession.d/04LXDE
 %{_bindir}/*
 %{_datadir}/applications/lxde-logout.desktop
