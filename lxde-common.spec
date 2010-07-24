@@ -14,6 +14,7 @@ Patch103:	lxde-common-0.5.5-lxpanel-customization.patch
 Patch105:	lxde-common-0.5.5-fix-makefile.patch
 URL:		http://lxde.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRequires:	xsltproc docbook-style-xsl
 BuildArch:	noarch
 #Requires:	smproxy
 Suggests:	xscreensaver
