@@ -3,7 +3,7 @@
 Summary:	A set of default configuration for LXDE
 Name:	  	lxde-common
 Version:	0.5.5
-Release:	%mkrel -c %git 1
+Release:	%mkrel -c %git 2
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version-%git.tar.gz
@@ -12,6 +12,7 @@ Patch101:	lxde-common-0.5.5-use-mandriva-backgrounds.patch
 Patch102:	lxde-common-0.5.5-add-mcc-to-panel.patch
 Patch103:	lxde-common-0.5.5-lxpanel-customization.patch
 Patch105:	lxde-common-0.5.5-fix-makefile.patch
+Patch106:	lxde-common-0.5.5-autostart.patch
 URL:		http://lxde.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	xsltproc docbook-style-xsl
@@ -40,6 +41,7 @@ This package provides a set of default configuration for LXDE.
 %patch102 -p0 -b .mdv-mcc
 %patch103 -p0 -b .mdv-panel
 %patch105 -p0 -b .makefile
+%patch106 -p0 -b .autostart
 
 %build
 ./autogen.sh
