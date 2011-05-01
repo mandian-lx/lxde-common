@@ -3,7 +3,7 @@
 Summary:	A set of default configuration for LXDE
 Name:	  	lxde-common
 Version:	0.5.5
-Release:	%mkrel -c %git 2
+Release:	%mkrel -c %git 3
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version-%git.tar.gz
@@ -54,8 +54,8 @@ rm -rf %{buildroot}
 
 %{find_lang} %{name}
 
-# we'll ship this file via mandriva-lxde-config
-rm -f %buildroot%{_sysconfdir}/xdg/lxsession/LXDE/desktop.conf
+# we'll ship these files via mandriva-lxde-config
+rm -f %buildroot%{_sysconfdir}/xdg/lxsession/LXDE/desktop.conf %buildroot%{_datadir}/lxde/openbox/rc.xml
 
 # we do not need this file
 rm -f %buildroot%{_datadir}/xsessions/LXDE.desktop
