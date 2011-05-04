@@ -14,6 +14,9 @@ Patch103:	lxde-common-0.5.5-lxpanel-customization.patch
 Patch105:	lxde-common-0.5.5-fix-makefile.patch
 Patch106:	lxde-common-0.5.5-autostart.patch
 Patch107:	lxde-common-0.5.5-openbox-lxde-man.patch
+Patch109:	lxde-common-0.5.5-config.patch
+Patch110:	lxde-common-0.5.5-startlxde.patch
+
 URL:		http://lxde.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	xsltproc docbook-style-xsl
@@ -44,6 +47,8 @@ This package provides a set of default configuration for LXDE.
 %patch105 -p0 -b .makefile
 %patch106 -p0 -b .autostart
 %patch107 -p0 -b .man
+%patch109 -p0 -b .config
+%patch110 -p0 -b .startlxde
 
 %build
 ./autogen.sh
@@ -87,7 +92,7 @@ rm -rf %{buildroot}
 %files -f %{name}.lang
 %defattr(-, root, root)
 %config %{_sysconfdir}/xdg/lxsession/LXDE/autostart
-%config %{_sysconfdir}/xdg/pcmanfm/LXDE.conf
+%config %{_sysconfdir}/xdg/pcmanfm/LXDE/pcmanfm.conf
 %{_sysconfdir}/X11/wmsession.d/04LXDE
 %{_bindir}/*
 %{_datadir}/applications/lxde-logout.desktop
