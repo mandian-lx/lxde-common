@@ -3,10 +3,11 @@
 Summary:	A set of default configuration for LXDE
 Name:	  	lxde-common
 Version:	0.5.5
-Release:	%mkrel -c %git 8
+Release:	%mkrel -c %git 9
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version-%git.tar.gz
+Source1:	mandriva-button.png
 # Mandriva customization patch
 Patch101:	lxde-common-0.5.5-use-mandriva-backgrounds.patch
 Patch102:	lxde-common-0.5.5-add-mcc-to-panel.patch
@@ -59,6 +60,9 @@ This package provides a set of default configuration for LXDE.
 rm -rf %{buildroot}
 %makeinstall_std
 
+mkdir -p %buildroot%{_datadir}/icons
+cp -f %SOURCE1 %{buildroot}%{_datadir}/icons/
+
 %{find_lang} %{name}
 
 # we'll ship these files via mandriva-lxde-config
@@ -99,3 +103,4 @@ rm -rf %{buildroot}
 %{_datadir}/lxde
 %{_datadir}/lxpanel
 %{_mandir}/man1/*
+%{_datadir}/icons/mandriva-button.png
