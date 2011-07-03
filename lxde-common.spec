@@ -103,4 +103,4 @@ rm -rf %{buildroot}
 %{_datadir}/lxde
 %{_datadir}/lxpanel
 %{_mandir}/man1/*
-%{_datadir}/icons/mandriva-button.png
+%{_datadir}/icons/mandriva-button-lxde.png
