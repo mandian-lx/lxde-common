@@ -3,11 +3,11 @@
 Summary:	A set of default configuration for LXDE
 Name:	  	lxde-common
 Version:	0.5.5
-Release:	%mkrel -c %git 9
+Release:	%mkrel -c %git 10
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version-%git.tar.gz
-Source1:	mandriva-button.png
+Source1:	mandriva-button-lxde.png
 # Mandriva customization patch
 Patch101:	lxde-common-0.5.5-use-mandriva-backgrounds.patch
 Patch102:	lxde-common-0.5.5-add-mcc-to-panel.patch
