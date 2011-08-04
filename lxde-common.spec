@@ -46,7 +46,7 @@ This package provides a set of default configuration for LXDE.
 %patch102 -p0 -b .mdv-mcc
 %patch103 -p0 -b .mdv-panel
 #patch105 -p0 -b .makefile
-patch106 -p0 -b .autostart
+%patch106 -p0 -b .autostart
 #patch107 -p0 -b .man
 %patch109 -p0 -b .config
 #patch110 -p0 -b .startlxde
