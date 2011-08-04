@@ -3,13 +3,13 @@
 Summary:	A set of default configuration for LXDE
 Name:	  	lxde-common
 Version:	0.5.5.1
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.gz
 Source1:	mandriva-button-lxde.png
 # Mandriva customization patch
-#Patch101:	lxde-common-0.5.5-use-mandriva-backgrounds.patch
+Patch101:	lxde-common-0.5.5-pcmanfm.conf.patch
 Patch102:	lxde-common-0.5.5-add-mcc-to-panel.patch
 Patch103:	lxde-common-0.5.5-lxpanel-customization.patch
 #Patch105:	lxde-common-0.5.5-fix-makefile.patch
@@ -42,7 +42,7 @@ This package provides a set of default configuration for LXDE.
 
 %prep
 %setup -q
-#patch101 -p0 -b .mdv-background
+%patch101 -p0 -b .pcmanfm_conf
 %patch102 -p0 -b .mdv-mcc
 %patch103 -p0 -b .mdv-panel
 #patch105 -p0 -b .makefile
