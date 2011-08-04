@@ -3,7 +3,7 @@
 Summary:	A set of default configuration for LXDE
 Name:	  	lxde-common
 Version:	0.5.5.1
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.gz
@@ -13,7 +13,7 @@ Source1:	mandriva-button-lxde.png
 Patch102:	lxde-common-0.5.5-add-mcc-to-panel.patch
 Patch103:	lxde-common-0.5.5-lxpanel-customization.patch
 #Patch105:	lxde-common-0.5.5-fix-makefile.patch
-#Patch106:	lxde-common-0.5.5-autostart.patch
+Patch106:	lxde-common-0.5.5-autostart.patch
 #Patch107:	lxde-common-0.5.5-openbox-lxde-man.patch
 Patch109:	lxde-common-0.5.5-config.patch
 #Patch110:	lxde-common-0.5.5-startlxde.patch
@@ -46,7 +46,7 @@ This package provides a set of default configuration for LXDE.
 %patch102 -p0 -b .mdv-mcc
 %patch103 -p0 -b .mdv-panel
 #patch105 -p0 -b .makefile
-#patch106 -p0 -b .autostart
+patch106 -p0 -b .autostart
 #patch107 -p0 -b .man
 %patch109 -p0 -b .config
 #patch110 -p0 -b .startlxde
