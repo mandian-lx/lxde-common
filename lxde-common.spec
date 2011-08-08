@@ -1,9 +1,11 @@
-%define git git20110721
+%define git git20110808
+# define Epoch only to revert from 0.5.5.1 to 0.5.5 git
+Epoch: 1
 
 Summary:	A set of default configuration for LXDE
 Name:	  	lxde-common
-Version:	0.5.5.1
-Release:	%mkrel 5
+Version:	0.5.5
+Release:	%mkrel -c %git 1
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.gz
