@@ -5,7 +5,7 @@ Epoch: 1
 Summary:	A set of default configuration for LXDE
 Name:	  	lxde-common
 Version:	0.5.5
-Release:	%mkrel -c %git 2
+Release:	%mkrel -c %git 3
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.gz
