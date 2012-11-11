@@ -1,0 +1,128 @@
+--- lxpanel/panel.in.old	2010-05-26 09:18:52.000000000 +0400
++++ lxpanel/panel.in	2011-06-13 15:18:29.000000000 +0400
+@@ -8,15 +8,18 @@
+     widthtype=percent
+     width=100
+     height=26
+-    transparent=0
+-    tintcolor=#000000
+-    alpha=0
++    transparent=1
++    tintcolor=#3f3f3f
++    alpha=255
++    autohide=0
++    heightwhenhidden=2
+     setdocktype=1
+     setpartialstrut=1
+     usefontcolor=1
+     fontcolor=#ffffff
+-    background=1
+-    backgroundfile=@prefix@/share/lxpanel/images/background.png
++    background=0
++    backgroundfile=/usr/share/lxpanel/images/background.png
++    iconsize=24
+ }
+ 
+ Plugin {
+@@ -29,7 +32,7 @@
+ Plugin {
+     type = menu
+     Config {
+-        image=@prefix@/share/lxde/images/lxde-icon.png
++        image=/usr/share/icons/mandriva-button-lxde.png
+         system {
+         }
+         separator {
+@@ -55,6 +58,18 @@
+         Button {
+             id=firefox.desktop
+         }
++        Button {
++            id=mandriva-drakconf.desktop
++        }
++        Button {
++            id=lxterminal.desktop
++        }
++        Button {
++            id=deadbeef.desktop
++        }
++        Button {
++    	    id=catfish.desktop
++	}
+     }
+ }
+ 
+@@ -68,8 +83,10 @@
+ Plugin {
+     type = wincmd
+     Config {
++        image=window-manager
+         Button1=iconify
+         Button2=shade
++        Toggle=0
+     }
+ }
+ 
+@@ -81,10 +98,6 @@
+ }
+ 
+ Plugin {
+-    type = pager
+-}
+-
+-Plugin {
+     type = space
+     Config {
+         Size=4
+@@ -97,24 +110,23 @@
+     Config {
+         tooltips=1
+         IconsOnly=0
+-        AcceptSkipPager=1
+-        ShowIconified=1
+-        ShowMapped=1
+         ShowAllDesks=0
+         UseMouseWheel=1
+         UseUrgencyHint=1
+-        FlatButton=0
++        FlatButton=0
+         MaxTaskWidth=150
+         spacing=1
++        GroupedTasks=1
+     }
+ }
+ 
+ Plugin {
+-    type = netstat
+-}
+-
+-Plugin {
+-    type = cpu
++    type = xkb
++    Config {
++        DisplayType=1
++        PerAppLayout=1
++        DefaultGroup=0
++    }
+ }
+ 
+ Plugin {
+@@ -124,9 +136,11 @@
+ Plugin {
+     type = dclock
+     Config {
+-        ClockFmt=%R
++        ClockFmt=%H:%M
+         TooltipFmt=%A %x
+-        BoldFont=0
++        BoldFont=1
++        IconOnly=0
++        CenterText=0
+     }
+ }
+ 
+@@ -138,4 +152,3 @@
+         }
+     }
+ }
+-

@@ -1,0 +1,21 @@
+--- openbox/menu.xml.orig	2010-05-26 08:18:52.000000000 +0300
++++ openbox/menu.xml	2010-07-21 03:43:02.672127437 +0300
+@@ -8,12 +8,15 @@
+     <startupnotify><enabled>yes</enabled><icon>pcmanfm</icon></startupnotify>
+     <command>pcmanfm</command></action>
+   </item>
+-  <item label="Xterm">
+-    <action name="Execute"><command>xterm</command></action>
++  <item label="LXTerminal">
++    <action name="Execute"><command>lxterminal</command></action>
+   </item>
+-  <item label="Firefox">
++  <item label="Mozilla Firefox">
+     <action name="Execute"><command>firefox</command></action>
+   </item>
++  <item label="Configure Your Computer">
++    <action name="Execute"><command>/usr/bin/drakconf</command></action>
++  </item>
+ </menu>
+ 
+ <menu id="root-menu" label="LXDE">
