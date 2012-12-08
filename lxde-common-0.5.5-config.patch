@@ -4,7 +4,7 @@
  [config]
  bm_open_method=0
 -su_cmd=xdg-su -c '%s'
-+su_cmd=gksu %s
++su_cmd=gksu -c '%s'
 +
 +[volume]
 +mount_on_startup=1

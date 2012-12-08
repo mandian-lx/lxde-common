@@ -14,7 +14,7 @@
      <action name="Execute"><command>firefox</command></action>
    </item>
 +  <item label="Configure Your Computer">
-+    <action name="Execute"><command>/usr/bin/drakconf</command></action>
++    <action name="Execute"><command>/usr/bin/lxde-control-center</command></action>
 +  </item>
  </menu>
  
