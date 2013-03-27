@@ -5,7 +5,7 @@ Epoch: 1
 Summary:	A set of default configuration for LXDE
 Name:	  	lxde-common
 Version:	0.5.5
-Release:	%mkrel -c %git 12
+Release:	%mkrel -c %git 13
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.gz
@@ -78,11 +78,12 @@ EOF
 # install this one manually, this provides the logout button on lxpanel:
 install -m644 -D lxde-logout.desktop.in %buildroot%_datadir/applications/lxde-logout.desktop
 
-%post
-%make_session
+# These macros are empty now, comment out
+# %post
+# %make_session
 
-%postun
-%make_session
+# %postun
+# %make_session
 
 %files
 %config %{_sysconfdir}/xdg/lxsession/LXDE/autostart
