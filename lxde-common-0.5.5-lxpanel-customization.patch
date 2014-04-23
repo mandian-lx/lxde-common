@@ -33,7 +33,7 @@
      type = menu
      Config {
 -        image=@prefix@/share/lxde/images/lxde-icon.png
-+        image=/usr/share/icons/rosa-button-lxde.png
++        image=/usr/share/icons/openmandriva.svg
          system {
          }
          separator {

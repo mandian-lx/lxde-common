@@ -5,12 +5,11 @@ Summary:	A set of default configuration for LXDE
 Name:		lxde-common
 Epoch:		1
 Version:	0.5.5
-Release:	0%{git}.13
+Release:	0%{git}.14
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		http://lxde.sourceforge.net/
 Source0:	http://dfn.dl.sourceforge.net/sourceforge/lxde/%{name}-%{version}.tar.gz
-Source1:	rosa-button-lxde.png
 # Mandriva customization patch
 Patch101:	lxde-common-0.5.5-pcmanfm.conf.patch
 Patch102:	lxde-common-0.5.5-add-mcc-to-panel.patch
@@ -53,9 +52,6 @@ This package provides a set of default configuration for LXDE.
 %install
 %makeinstall_std
 
-mkdir -p %{buildroot}%{_iconsdir}
-cp -f %SOURCE1 %{buildroot}%{_iconsdir}/
-
 # we'll ship these files via mandriva-lxde-config
 rm -f %{buildroot}%{_sysconfdir}/xdg/lxsession/LXDE/desktop.conf %{buildroot}%{_datadir}/lxde/openbox/rc.xml
 
@@ -83,6 +79,5 @@ install -m644 -D lxde-logout.desktop.in %{buildroot}%{_datadir}/applications/lxd
 %{_datadir}/applications/lxde-logout.desktop
 %{_datadir}/lxde
 %{_datadir}/lxpanel
-%{_iconsdir}/rosa-button-lxde.png
 %{_mandir}/man1/*
 
