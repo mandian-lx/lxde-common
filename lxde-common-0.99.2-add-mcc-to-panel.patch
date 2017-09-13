@@ -1,5 +1,5 @@
---- openbox/menu.xml.orig	2010-05-26 08:18:52.000000000 +0300
-+++ openbox/menu.xml	2010-07-21 03:43:02.672127437 +0300
+--- lxde-common-0.99.2/openbox/menu.xml.orig
++++ lxde-common-0.99.2/openbox/menu.xml
 @@ -8,12 +8,15 @@
      <startupnotify><enabled>yes</enabled><icon>pcmanfm</icon></startupnotify>
      <command>pcmanfm</command></action>

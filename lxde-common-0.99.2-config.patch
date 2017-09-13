@@ -1,5 +1,5 @@
---- pcmanfm/pcmanfm.conf.in.old	2011-07-29 18:04:03.000000000 +0400
-+++ pcmanfm/pcmanfm.conf.in	2011-08-04 17:01:08.000000000 +0400
+--- lxde-common-0.99.2/pcmanfm/pcmanfm.conf.in
++++ lxde-common-0.99.2/pcmanfm/pcmanfm.conf.in
 @@ -1,19 +1,28 @@
  [config]
  bm_open_method=0
@@ -12,7 +12,7 @@
 +autorun=1
  
  [desktop]
- wallpaper_mode=1
+ wallpaper_mode=crop
 -wallpaper=@prefix@/share/lxde/wallpapers/lxde_blue.jpg
 +wallpaper=/usr/share/mdk/backgrounds/default.jpg
  desktop_bg=#000000
@@ -29,6 +29,6 @@
  win_height=480
 +splitter_pos=150
 +side_pane_mode=1
- view_mode=0
+ view_mode=icon
  show_hidden=0
- sort_type=0
+ sort=name;ascending;
